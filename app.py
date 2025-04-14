@@ -1,5 +1,5 @@
 import streamlit as st
-from server import r6econ  # 👈 this is the key fix
+from predictor import r6econ  # ✅ no Discord bot here
 
 st.set_page_config(page_title="R6 Econ Predictor", layout="wide")
 
