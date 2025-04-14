@@ -1,5 +1,5 @@
 import streamlit as st
-from r6econ import r6econ
+from r6econ import r6econ as run_prediction
 
 st.set_page_config(page_title="R6 Econ Predictor", layout="wide")
 
