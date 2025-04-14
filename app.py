@@ -1,5 +1,5 @@
 import streamlit as st
-from predictor import r6econ  # ✅ no Discord bot here
+from predictor import r6econ  # Importing from predictor.py
 
 st.set_page_config(page_title="R6 Econ Predictor", layout="wide")
 
