@@ -1,18 +1,17 @@
 import streamlit as st
-from r6econ import r6econ as run_prediction
+from server import r6econ  # 👈 this is the key fix
 
 st.set_page_config(page_title="R6 Econ Predictor", layout="wide")
 
-st.title("🧠 Rainbow Six Econ Predictor")
-st.write("This tool helps predict or understand R6 marketplace patterns.")
+st.title("🔍 R6 Market Snipe Predictor")
+st.markdown("Enter your price history to predict the next possible value:")
 
-st.markdown("### Input your numbers (comma separated):")
-user_input = st.text_input("Example: 35,66,12,166,10,120,16,98,66,33")
+user_input = st.text_input("Comma-separated values", "35,66,12,166,10,120,16,98,66,33")
 
 if user_input:
     try:
-        input_list = [int(x.strip()) for x in user_input.split(",")]
-        prediction = r6econ(input_list)
-        st.success(f"Predicted next number: {prediction}")
+        data = [int(x.strip()) for x in user_input.split(",")]
+        result = r6econ(data)
+        st.success(f"Predicted next value: {result}")
     except Exception as e:
-        st.error(f"Error: {e}")
+        st.error(f"Something went wrong: {e}")
